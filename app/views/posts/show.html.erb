@@ -1,0 +1,27 @@
+ <div class="row">    
+      <div class="col-sm-9 col-sm-offset-2">
+        <div class="well">
+        <p> Dish Name: <%= @post.food %></p>
+        
+        <p> Price: <%= @post.price %></p>
+         <img src=<%= @post.image%>><br>
+
+         </div>
+      </div> 
+    </div> 
+
+  <% if is_admin? %> 
+    <%= link_to "Edit", "/posts/#{@post.id}/edit", class: "btn btn-success" %>
+    <%= link_to "Delete", "/posts/#{@post.id}", {method: :delete, class: "btn btn-danger" }%>
+  <% end %>     
+ 
+
+      
+    
+
+  
+    
+
+
+
+  
