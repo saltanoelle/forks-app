@@ -6,21 +6,24 @@
 <h2>Explore Food</h2>
 
 <div class="row">
-<!-- <a href="/products?sort=price&sort_order=asc"> -->
 
+ <% if current_user %>
+ <h3><%= current_user.email%></h3>
+ <% end %>
 <% @posts.each do |post|%>
-  <div class ="col-sm-4 col-sm-4">
+  <div class ="col-lrg-7 col-lrg-7">
     <div class="well">
        <p><%= post.user_id%></p>
 
     
-       <img src=<%= post.image%>><br>
+       <img src=<%= post.image %>><br>
       <a href="/posts/<%=post.id%>"><%= post.food %></a><br>
       <p><%= number_to_currency(post.price) %></p>
     </div>
    </div>     
 
 <% end%>
+<!--  -->
 </div>
    </center>
 

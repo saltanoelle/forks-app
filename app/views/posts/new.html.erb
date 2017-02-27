@@ -1,0 +1,30 @@
+
+
+
+<p>New Post</p>
+<%= form_tag "/posts", method: :post do %>
+    <div>
+     Caption: <input type="text" name="name">
+    </div>
+    
+    <div>
+     Price: <input type="text" name="price">
+    </div>
+    
+ 
+
+    <div>
+      <%= label_tag :image %>
+      <%= text_field_tag :image %>
+    </div>
+
+    <div>
+    <%= label_tag :restaurant %>
+     <%= text_field_tag :restaurant %>
+  
+    </div>
+
+
+
+ <input type="submit" value="Create Post">
+<% end %>

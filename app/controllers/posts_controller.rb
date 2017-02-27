@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+
+  # before_action :authenticate_admin!, except:[:index, :show, :search, :new] 
   def index
     
     @posts = Post.all
@@ -13,7 +15,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    
+   
   end
   
   def create
@@ -21,9 +23,8 @@ class PostsController < ApplicationController
       food: params[:food],
       price: params[:price],
       image: params[:image],
-      restaurant: params[:restaurant])
-    
-    # @product.images.create(url: params[:image], product_id: @product.id)
+      restaurant_id: params[:restaurant]["restaurant_id"]
+      )
 
     if @post.save
     flash[:success] = "Product successfully created!"
@@ -41,6 +42,7 @@ class PostsController < ApplicationController
     # end 
   
     # @images = @product.images
+    @restaurant = @post.restaurant
   end
 
   def edit
@@ -54,7 +56,8 @@ class PostsController < ApplicationController
       food: params[:food],
       price: params[:price],
       image: params[:image],
-      restaurant: params[:restaurant]
+      restaurant_id: params[:restaurant_id]
+   
       )
     if @post.save
       flash[:success] = "Post Updated"
@@ -72,3 +75,4 @@ class PostsController < ApplicationController
   redirect_to "/posts"
   end 
 end
+

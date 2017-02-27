@@ -1,0 +1,43 @@
+<% if @post && @post.errors.any? %>
+ <div id="error_explanation">
+  <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+     
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+     <% end %>
+     </ul>
+  </div>
+ <% end %>
+
+
+<p>Edit Post:</p>
+<%= form_tag "/posts/#{@post.id}", method: :patch do %> 
+<!-- #patch -->
+  
+  <div>
+    <%= label_tag :food %>
+    <%= text_field_tag :food, @post.food %>
+  </div>        
+  <div>
+    <%= label_tag :price %>
+    <%= text_field_tag :price, @post.price %>
+  </div>
+   <div>
+    <%= label_tag :image %>
+    <%= text_field_tag :image, @post.image %>
+  </div>
+  <div>
+    <%= label_tag :restaurant_id %>
+    <%= text_field_tag :restaurant_id, @post.restaurant_id %>
+  </div>
+       
+
+ 
+ 
+
+  <input type="submit" value="Edit Post">
+  <% end %>
+
+
+
