@@ -1,15 +1,22 @@
+
+
  <div class="row">    
       <div class="col-sm-9 col-sm-offset-2">
         <div class="well">
-        <h3> Caption: <%= @post.food %></h3>
+         <a href="/users/<%=@user.id%>"><%= @post.user.first_name%></a><br>
+      
+        
+        <p> Caption: <%= @post.food %></p>
+    
+        <p> Restaurant: <%= @post.restaurant.name %></p>
         <p> Price: <%= @post.price %></p>
          <img src=<%= @post.image%>><br>
-
+          <%= submit_tag "Fork it" %>
          </div>
       </div> 
     </div> 
 
-  <% if is_admin? %> 
+  <% if current_user.id == @post.user_id%> 
     <%= link_to "Edit", "/posts/#{@post.id}/edit", class: "btn btn-success" %>
     <%= link_to "Delete", "/posts/#{@post.id}", {method: :delete, class: "btn btn-danger" }%>
   <% end %>     

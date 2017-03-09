@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   delete "/posts/:id"=> "posts#destroy"
 
 
+
   get "/signup" => "users#new"
 
   post "/users" => "users#create"
@@ -18,6 +19,13 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
 
   post "/login" => "sessions#create"
+  get "/users/:id" => "users#show"
+  get "/users" => "users#index"
   
   get "/logout" => "sessions#destroy"
+
+
+  get "/restaurants" =>"restaurants#index"
+  get "/restaurants/:id" => "restaurants#show"
+
 end

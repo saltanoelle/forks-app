@@ -1,0 +1,11 @@
+<div class="row">    
+      <div class="col-sm- col-sm-offset-5">
+       <div class="well">
+
+<% @restaurant.posts.each do |post| %>
+<%= post.food %>
+<img src="<%= post.image%>">
+<%end%>
+      </div>
+    </div>
+ </div>   

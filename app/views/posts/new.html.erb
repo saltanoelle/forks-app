@@ -1,10 +1,20 @@
-
+<% if @post && @post.errors.any? %>
+ <div id="error_explanation">
+   <h2><%= pluralize(@post.errors.count, "error") %> prohibited this product from being saved:</h2>
+       
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 
 <p>New Post</p>
-<%= form_tag "/posts", method: :post do %>
+<%= form_tag "/posts", method: :post, multipart: true do %>
     <div>
-     Caption: <input type="text" name="name">
+     Caption: <input type="text" name="food">
     </div>
     
     <div>
@@ -12,19 +22,19 @@
     </div>
     
  
-
     <div>
-      <%= label_tag :image %>
-      <%= text_field_tag :image %>
+     <%= label_tag :image %>
+     <%= file_field_tag :image, accept: 'image/*;capture=camera' %>
     </div>
 
     <div>
-    <%= label_tag :restaurant %>
-     <%= text_field_tag :restaurant %>
+    <%= label_tag :restaurant_id %>
+     <%= text_field_tag :restaurant_id %>
   
     </div>
 
 
 
- <input type="submit" value="Create Post">
+  
+  <input type="submit" value="Create Post">
 <% end %>

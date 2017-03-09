@@ -1,6 +1,15 @@
 class PostsController < ApplicationController
+before_filter :require_permission, only: [:edit, :delete]
 
-  # before_action :authenticate_admin!, except:[:index, :show, :search, :new] 
+
+def require_permission
+  if current_user != Post.find(params[:id]).user
+    redirect_to "/posts"
+    #Or do something else here
+  end
+end
+
+ 
   def index
     
     @posts = Post.all
@@ -19,15 +28,18 @@ class PostsController < ApplicationController
   end
   
   def create
+    response = Unirest.post("http://uploads.im/api?upload", parameters: {file: params[:image]}).body
     @post = Post.create(
       food: params[:food],
       price: params[:price],
-      image: params[:image],
-      restaurant_id: params[:restaurant]["restaurant_id"]
+      image: response["data"]["img_url"],
+      restaurant_id: params[:restaurant_id],
+      user_id: current_user.id
       )
 
+
     if @post.save
-    flash[:success] = "Product successfully created!"
+    flash[:success] = "Post successfully created!"
     redirect_to "/posts/#{@post.id}"
    else
     render :new
@@ -43,11 +55,16 @@ class PostsController < ApplicationController
   
     # @images = @product.images
     @restaurant = @post.restaurant
+    user_id = params[:id]
+    @user = User.find_by(id: user_id)
+    @user = @post.user
   end
 
   def edit
+    @post = current_user.posts.find(params[:id])
     post_id = params[:id]
     @post = Post.find_by(id: post_id)
+
   end
 
   def update
@@ -69,10 +86,11 @@ class PostsController < ApplicationController
 
  def destroy
   post_id = params[:id]
-  @post = Product.find_by(id: post_id)
+  @post = Post.find_by(id: post_id)
   @post.destroy
   flash[:warning] = "Post successfully deleted!"
   redirect_to "/posts"
   end 
+ 
 end
 
