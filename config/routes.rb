@@ -1,32 +1,40 @@
 Rails.application.routes.draw do
   root to: "posts#index"
-  get "/posts"=>"posts#index"
-  get "/posts/new"=> "posts#new"
-  post "/posts"=> "posts#create"
-  get "/posts/:id" => "posts#show"
+
+  resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :users, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :sessions, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :restaurants, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  
+  
+
+  # get "/posts"=>"posts#index"
+  # get "/posts/new"=> "posts#new"
+  # post "/posts"=> "posts#create"
+  # get "/posts/:id" => "posts#show"
   
  
-  get "/posts/:id/edit"=>"posts#edit"
-  patch "/posts/:id" => "posts#update"
+  # get "/posts/:id/edit"=>"posts#edit"
+  # patch "/posts/:id" => "posts#update"
 
-  delete "/posts/:id"=> "posts#destroy"
+  # delete "/posts/:id"=> "posts#destroy"
 
 
 
-  get "/signup" => "users#new"
+  # get "/signup" => "users#new"
 
-  post "/users" => "users#create"
+  # post "/users" => "users#create"
 
-  get "/login" => "sessions#new"
+  # get "/login" => "sessions#new"
 
-  post "/login" => "sessions#create"
-  get "/users/:id" => "users#show"
-  get "/users" => "users#index"
+  # post "/login" => "sessions#create"
+  # get "/users/:id" => "users#show"
+  # get "/users" => "users#index"
   
-  get "/logout" => "sessions#destroy"
+  # get "/logout" => "sessions#destroy"
 
 
-  get "/restaurants" =>"restaurants#index"
-  get "/restaurants/:id" => "restaurants#show"
+  # get "/restaurants" =>"restaurants#index"
+  # get "/restaurants/:id" => "restaurants#show"
 
 end
