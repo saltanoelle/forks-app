@@ -91,6 +91,9 @@ end
   flash[:warning] = "Post successfully deleted!"
   redirect_to "/posts"
   end 
+
+  
+
  
 end
 

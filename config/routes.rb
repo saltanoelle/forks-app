@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :sessions, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :restaurants, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :posts do
+  put :forks, on: :member
+end
   
   
 
