@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "posts#index"
+  get '/' => 'posts#index'
 
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :users, only: [:index, :new, :create, :show, :edit, :update, :destroy]
