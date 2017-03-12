@@ -53,7 +53,6 @@ end
     #   @product = Product.all.sample
     # end 
   
-    # @images = @product.images
     @restaurant = @post.restaurant
     user_id = params[:id]
     @user = User.find_by(id: user_id)

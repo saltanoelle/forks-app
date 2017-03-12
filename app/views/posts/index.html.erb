@@ -22,13 +22,15 @@
       <a href="/posts/<%=post.id%>"><%= post.food %></a><br>
       
       <p><%= number_to_currency(post.price) %></p>
+    
 
-      <button>fork it</button>
+      <%= button_to "fork", "/forks",{method: :post, params: {post_id: post.id}, class: "btn"}%>
+
     </div>
    </div>     
 
 <% end%>
-<!--  -->
+
 </div>
    </center>
 

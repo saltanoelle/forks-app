@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :restaurants, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :posts do
-  put :forks, on: :member
+ 
 end
   
   
@@ -24,20 +24,24 @@ end
 
 
 
-  # get "/signup" => "users#new"
+  get "/signup" => "users#new"
 
-  # post "/users" => "users#create"
+  post "/users" => "users#create"
 
-  # get "/login" => "sessions#new"
+  get "/login" => "sessions#new"
 
-  # post "/login" => "sessions#create"
-  # get "/users/:id" => "users#show"
-  # get "/users" => "users#index"
+  post "/login" => "sessions#create"
+  get "/users/:id" => "users#show"
+  get "/users" => "users#index"
   
-  # get "/logout" => "sessions#destroy"
+  get "/logout" => "sessions#destroy"
 
 
   # get "/restaurants" =>"restaurants#index"
   # get "/restaurants/:id" => "restaurants#show"
+
+  get "/forks" => "forks#index"
+  post "/forks" => "forks#create"
+ 
 
 end
