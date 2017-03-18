@@ -4,16 +4,21 @@
 <div class="row" align="center">
 <% @user.posts.each do |post| %>
 
-  <div class ="col-lrg-2 col-lrg-2">
+  <div class ="col-lrg-7 col-lrg-7">
+
+
     <div class="well">
 
-    <%= post.food %></a><br>
+
+    <a href="/posts/<%=post.id%>"><%= post.food %></a><br>
     <img src="<%= post.image%>">
-<%end%>
-    </div>
+     <div class ="col-lrg-7 col-lrg-7">
+       </div>
   </div>
-</div>   
+</div>  
+<%end%>
+  
 
 <h2>FORKS</h2>
 
-<a href="/forks"><img src="http://www.rootscsa.org/wp-content/uploads/2014/06/Restaurant-Icon.png"></a></p>
+<a href="/forks"><img src="http://www.rootscsa.org/wp-content/uploads/2014/06/Restaurant-Icon.png" width="200" height="200"></a></p>

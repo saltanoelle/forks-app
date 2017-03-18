@@ -15,12 +15,9 @@ end
     @posts = Post.all
   end
 
-  # def search
-  #   search_term = params[:search]
-  # #ping database to find products that are similar to search term
-  #   @products = Product.where("name LIKE ?", "%#{search_term}%")
-  #   render :index
-  # end
+  def search
+  response = Yelp.client.search.category_filter.location.postal_code('San Francisco')
+  end
 
   def new
     @post = Post.new

@@ -1,20 +1,15 @@
 
-<center><h1>Forks</h1>
+<center>
+<h1>Forks</h1>
 
 <div class="row">
 
 <% @forks.each do |fork|%>
-  <div class ="col-lrg-7 col-lrg-7">
+  <div class ="col-sm-7 col-sm-4">
     <div class="well">
-       
-
-
-    
-   
      <p> <%= fork.post.food %></a></p>
         <img src="<%= fork.post.image %>">
-
-
+   <p> <%= fork.post.restaurant%></a></p>      
     
     
 

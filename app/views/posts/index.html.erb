@@ -2,32 +2,40 @@
 <center><h1>Forks</h1>
 
 
+<img src="http://www.rootscsa.org/wp-content/uploads/2014/06/Restaurant-Icon.png" width="200" height="200" >
 
 
-<h2>Explore Food</h2>
 
-<div class="row">
+<h2 font face="modern">Explore Food</h2>
+
+
 
  <% if current_user %>
  <h3 style="color:blue;">Welcome <%=current_user.first_name%>!!</h3>
  <% end %>
 <% @posts.each do |post|%>
   <div class ="col-lrg-7 col-lrg-7">
+    <div class ="col-lrg-7 col-lrg-7">
+    <div class="row">
     <div class="well">
        
 
 
-    
+
       <img src=<%= post.image %>><br>
       <a href="/posts/<%=post.id%>"><%= post.food %></a><br>
       
-      <p><%= number_to_currency(post.price) %></p>
+<!--       <p><%= number_to_currency(post.price) %></p>
+ -->      <p>
+     <p><%= post.created_at.strftime("%B %d, %Y") %>
+</p>
     
 
       <%= button_to "fork", "/forks",{method: :post, params: {post_id: post.id}, class: "btn"}%>
-
+ 
     </div>
-   </div>     
+   </div> 
+   </div>    
 
 <% end%>
 
