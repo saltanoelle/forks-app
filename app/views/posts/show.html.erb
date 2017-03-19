@@ -9,7 +9,7 @@
         <p> Caption: <%= @post.food %></p>
     
         <p>Restaurant:<a href="/restaurants/<%=@restaurant.id%>"> <%= @post.restaurant.name %></a></p>
-        <p> Price: <%= @post.price %></p>
+      <p><%= number_to_currency(@post.price) %></p>
          <img src=<%= @post.image%>><br>
           <%= submit_tag "Fork it" %>
          </div>

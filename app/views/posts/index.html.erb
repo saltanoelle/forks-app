@@ -1,3 +1,7 @@
+<div ng-app="app">
+
+</div>
+
 
 <center><h1>Forks</h1>
 
@@ -22,16 +26,17 @@
 
 
 
-      <img src=<%= post.image %>><br>
-      <a href="/posts/<%=post.id%>"><%= post.food %></a><br>
+      <a href="/posts/<%=post.id%>"><img src=<%= post.image %>></a><br>
+      <h5><%= post.food %></h5><br>
       
 <!--       <p><%= number_to_currency(post.price) %></p>
- -->      <p>
+ -->  
      <p><%= post.created_at.strftime("%B %d, %Y") %>
 </p>
     
 
       <%= button_to "fork", "/forks",{method: :post, params: {post_id: post.id}, class: "btn"}%>
+
  
     </div>
    </div> 
@@ -41,5 +46,3 @@
 
 </div>
    </center>
-
-

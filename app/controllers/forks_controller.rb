@@ -5,8 +5,7 @@ end
 
 def create
   post_id = params[:post_id]
-
- fork = Fork.create(
+  fork = Fork.create(
   user_id: current_user.id,
   post_id: post_id)
 
@@ -14,6 +13,4 @@ def create
  redirect_to "/posts"
 end
 
-
-  
 end

@@ -13,10 +13,14 @@ end
   def index
     
     @posts = Post.all
+ 
+   
   end
 
   def search
-  response = Yelp.client.search.category_filter.location.postal_code('San Francisco')
+   search_term = params[:search]
+
+   @businesses = Yelp.client.search('San Francisco', { term: 'food' }).businesses
   end
 
   def new

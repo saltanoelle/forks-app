@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get '/' => 'posts#index'
 
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy]
@@ -23,6 +24,7 @@ end
   # delete "/posts/:id"=> "posts#destroy"
 
 
+  post "/search" => "restaurants#search"
 
   get "/signup" => "users#new"
 
@@ -44,6 +46,11 @@ end
   post "/forks" => "forks#create"
 
   post "/search" => "posts#search"
- 
+  get "/businesses" => "businesses#index" 
+  get "/businesses" => "businesses#show" 
+  get "/restaurants/new"=> "posts#new"
+  post "/restaurants"=> "posts#create"
+
+
 
 end
