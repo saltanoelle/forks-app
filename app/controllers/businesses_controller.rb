@@ -1,13 +1,13 @@
-class BusinessesController < ApplicationController
-  def index
-    @businesses = Yelp.client.search('San Francisco', { term: 'food' }).businesses
+# class BusinessesController < ApplicationController
+#   def index
+#     @businesses = Yelp.client.search('San Francisco', { term: 'food' }).businesses
 
-   @responses = Yelp.client.business('yelp-san-francisco')
+#    @responses = Yelp.client.business('yelp-san-francisco')
 
-  end
+#   end
 
-  def show
-      @businesses = Yelp.client.search('San Francisco', { term: 'food' }).businesses
+#   def show
+#       @businesses = Yelp.client.search('San Francisco', { term: 'food' }).businesses
 
-  end
-end
+#   end
+# end

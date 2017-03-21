@@ -4,15 +4,17 @@ class RestaurantsController < ApplicationController
    # @businesses = Unirest.get("https://api.yelp.com/v2/business/yelp-san-francisco").body
    # response = client.search('San Francisco')
 
-   @businesses = Yelp.client.search('San Francisco', { term: 'food' }).businesses
-   # @businesses.each do |business|
-   #  @restaurant = Restaurant.create(
-   #   name: business.name,
-   #   # image_url: business.image_url,
-   #   # rating_img_url: business.rating_img_url,
-   #   location: business.location.address
-   # )
-   
+  #  @businesses = Yelp.client.search('San Francisco', { term: 'food' }).businesses
+  #  # @businesses= Yelp.client.business('yelp-new-york')
+  #  @businesses.each do |business|
+  #   @restaurant = Restaurant.create(
+  #    name: business.name,
+  #    # image_url: business.image_url,
+  #    # rating_img_url: business.rating_img_url,
+  #    location: business.location.display_address  
+  #  )
+  # end
+   #@businesses = Yelp.client.search('location', { term: 'food' }).businesses
 
   
 

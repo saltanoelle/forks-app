@@ -28,12 +28,21 @@
     </div>
 
     <div>
-  
+    
     <%= label_tag :restaurant_id %>
-     <%= text_field_tag :restaurant_id %>
+    <%= text_field_tag :restaurant_id%>
+
 
    
     </div>
+
+    <script>
+    <datalist id="names">
+      <option ng-repeat="restaurant in restaurants">{{restaurant.name}}</option>
+    </datalist>
+
+    Filter: <input ng-model="nameFilter" list="names">
+    </script>
 
 
 

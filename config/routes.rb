@@ -44,6 +44,8 @@ end
 
   get "/forks" => "forks#index"
   post "/forks" => "forks#create"
+  get "/forks/:id" => "forks#show"
+
 
   post "/search" => "posts#search"
   get "/businesses" => "businesses#index" 
