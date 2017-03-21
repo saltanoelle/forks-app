@@ -1,7 +1,7 @@
 class ForksController < ApplicationController
 def index
-    user_id = params[:id]
-    user = User.find_by(id: user_id)
+ 
+ 
     @forks = Fork.all
   
   
@@ -16,6 +16,11 @@ def create
 
     
  redirect_to "/forks"
+end
+
+def show
+      user_id = params[:id]
+    @user = User.find_by(id: user_id)
 end
 
 end

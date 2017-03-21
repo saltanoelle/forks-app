@@ -56,41 +56,12 @@ function initMap() {
     }
 </script>
 
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7vFIeuS6glMAjj1fR37gi-6UonaES_5A&callback=initMap"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>&callback=initMap"></script>
 
 
 
-<!--  <script src="http://maps.googleapis.com/maps/api/js?key=<%= ENV['AIzaSyD7vFIeuS6glMAjj1fR37gi-6UonaES_5A'] %>"></script>
  
-    function initialize() {
-
-      var mapProp = {
-        center:new google.maps.LatLng(<%= @restaurant.lat %><%= @restaurant.lng %>),
-        zoom:10,
-        mapTypeId:google.maps.MapTypeId.ROADMAP
-      };
-
-      var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-
-      var infowindow = new google.maps.InfoWindow({
-        content: '<a href="/restaurants/<%= @restaurant.id %>"><%= @restaurant.location %></a>'
-      });
-      var marker = new google.maps.Marker({
-        position: {lat: <%= @restaurant.lat %> lng<%= @restaurant.lng%>},
-        map: map,
-        infowindow: infowindow
-      });
-      google.maps.event.addListener(marker, 'click', function() {
-        this.infowindow.open(map, this);
-      });
-
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-  </script>   
-  </script>
- -->
-
+   
 
 
 
