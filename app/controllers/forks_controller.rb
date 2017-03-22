@@ -2,7 +2,10 @@ class ForksController < ApplicationController
 def index
  
  
-    @forks = Fork.all
+
+    @user = User.find(params[:id])
+    @forks = @user.forks
+
   
   
   
@@ -19,8 +22,13 @@ def create
 end
 
 def show
-      user_id = params[:id]
+    fork_id = params[:id]
+    @fork = Fork.find_by(id: fork_id)
+   
+  
+    user_id = params[:id]
     @user = User.find_by(id: user_id)
+    @user = @fork.user
 end
 
 end

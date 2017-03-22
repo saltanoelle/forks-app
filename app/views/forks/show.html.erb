@@ -1,0 +1,9 @@
+<%= @user.first_name %>
+<% @user.forks.each do |fork| %></a></p>
+  <div class ="col-lrg-7 col-lrg-7">
+    <div class="well">
+<p><%= fork.post.food %></p>
+<img src="<%= fork.post.image %>">
+<%end%>
+</div>
+</div>
