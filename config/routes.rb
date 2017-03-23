@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/home' => 'pages#landing'
 
   get '/' => 'posts#index'
 

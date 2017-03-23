@@ -36,7 +36,7 @@ end
       image: response["data"]["img_url"],
       # if restaurant_id =! null
       # restaurant_id: params[:restaurant_id]
-      restaurant_id: params[:name]['restaurant_id'],
+      restaurant_id: params[:restaurant]["restaurant_id"],
       # else redirect_to "restaurants/new"
       # end  
       user_id: current_user.id

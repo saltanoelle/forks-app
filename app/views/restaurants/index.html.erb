@@ -1,11 +1,18 @@
 <h3>Discover Restaurants</h3>
+     
+      <div class="col-sm-5">
+       <div class="col-sm-10">
 
 
 
 <% @restaurants.each do |restaurant|%>
 
         <a href="/restaurants/<%=restaurant.id%>"><%= restaurant.name %></a><br>
+
+        <img src="<%= restaurant.image_url %>"><br>
         
  <%end%>  
 
 <!--  -->
+</div>
+</div>
