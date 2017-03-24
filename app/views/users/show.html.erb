@@ -1,42 +1,52 @@
 <h3 align="center">Profile</h3>
-<img src=<%= @user.image%>><br>
+<center>
+<img class="img-circle" src=<%= @user.image%>><br>
+</center>
 
-<h1 align="center"><%= @user.first_name%></h1>
+<h1 align="center"><%= @user.first_name%>  <%= @user.last_name%></h1>
 
-<div class="row" align="center">
+<div class="row">
+<div class="container">
 <% @user.posts.each do |post| %>
 
-  <div class ="col-lrg-7 col-lrg-7">
+    <div class ="col-sm-4 col-sm-4">
+      <div class ="float">
+    
 
-
-    <div class="well">
-
-
-    <a href="/posts/<%=post.id%>"><%= post.food %></a><br>
-    <img src="<%= post.image%>">
-     <div class ="col-lrg-7 col-lrg-7">
-       </div>
-  </div>
-</div>  
+    <a href="/posts/<%=post.id%>"> <img src="<%= post.image%>"></a><br>
+   
+    </div>
+    </div>
 <%end%>
+</div>
+<br>
+<div class="aligncenter" style="width:1300px;height:3px;border-top:5px dotted #00E5FF;border-bottom:2px dotted #00E5FF;font-size:0;">-</div> 
   
-
+<center>
 <h2>FORKS</h2>
+<div class="row">
+<div class="container">
+
 
 <% @user.boards.each do |board| %>
 
-  <div class ="col-lrg-7 col-lrg-7">
+
+   <div class ="col-sm-3 col-sm-2">
+      <div class ="float">
 
 
-    <div class="well">
+  
 
 
    <a href="/boards/<%=board.id%>"><%= board.name %></a><br>
+   <img src="https://s-media-cache-ak0.pinimg.com/236x/55/75/12/55751228d9eaa96b9dd9ff35c5aaf839.jpg" class="img-thumbnail" width="20" height="10">
+
    
        
   </div>
 </div>  
 <%end%>
+</div>
 
 <a href="/users/<%=@user.id%>/forks
 "><img src="http://www.rootscsa.org/wp-content/uploads/2014/06/Restaurant-Icon.png" width="200" height="200"></a></p>

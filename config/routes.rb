@@ -55,8 +55,8 @@ end
   get "/restaurants/new"=> "posts#new"
   post "/restaurants"=> "posts#create"
 
-  get "/boards" => "boards#create"
-  get "boards/new" => "boards#new"
+  post "/boards" => "boards#create"
+  get "/boards/new" => "boards#new"
   get "/boards/:id" => "boards#show"
 
 

@@ -1,9 +1,4 @@
 class BoardsController < ApplicationController
-  def index
-    @user = User.find(params[:id])
-    @boards = @user.boards
-  
-  end
   
   def new
   end

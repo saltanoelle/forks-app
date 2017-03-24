@@ -30,8 +30,9 @@
     <div>
     
     <%= label_tag :restaurant_id %>
-    <%= collection_select :restaurant, :restaurant_id, Restaurant.all, :id, :name %>
- 
+    
+    <%= collection_select :restaurant, :restaurant_id, Restaurant.all, :id, :name, {include_blank: 'Please select'}%>
+   
 <!--  -->
 
 
