@@ -3,14 +3,15 @@ class RestaurantsController < ApplicationController
    @restaurants = Restaurant.all
 
 
-  #  @businesses = Yelp.client.search('Los Angeles', { term: 'food' }).businesses
-  #  @businesses.each do |business|
-  #   @restaurant = Restaurant.create(
-  #    name: business.name,
-  #    image_url: business.image_url,
-  #    # rating_img_url: business.rating_img_url,
-  #    location: business.location.display_address  
-  #  )
+   # @businesses = Yelp.client.search('New York', { term: 'food' }).businesses
+   # @businesses.each do |business|
+   #  @restaurant = Restaurant.create(
+   #   name: business.name,
+   #   image_url: business.image_url,
+   #   # rating_img_url: business.rating_img_url,
+   #   location: business.location.display_address,
+   
+   # )
   # end
 
   
@@ -47,6 +48,11 @@ class RestaurantsController < ApplicationController
   end
 
    def search
-    parameters = { term: params[:term], limit: 16 }
+  search_term = params[:search]
+  @restaurants = Restaurant.where("location LIKE ?", "%#{search_term}%")
+   render :index
+
+
+   # @businesses = Yelp.client.search('San Francisco', { params[:term] 'food' }).businesses
   end
 end

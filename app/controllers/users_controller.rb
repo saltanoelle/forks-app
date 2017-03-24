@@ -9,12 +9,17 @@ class UsersController < ApplicationController
   end
 
   def create
+    response = Unirest.post("http://uploads.im/api?upload", parameters: {file: params[:image]}).body
+
     user = User.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
       password: params[:password],
-      password_confirmation: params[:password_confirmation]
+      password_confirmation: params[:password_confirmation],
+      image: response["data"]["img_url"],
+
+
     )
     if user.save
       session[:user_id] = user.id

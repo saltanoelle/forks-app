@@ -1,0 +1,11 @@
+<h2><%=@board.name%></h2>
+ <div class ="col-lrg-7 col-lrg-7">
+
+
+    <div class="well">
+<% @board.forks.each do |fork| %>
+  <%= fork.post.food %>
+  <img src="<%= fork.post.image %>">
+<%end%>
+</div>
+</div>

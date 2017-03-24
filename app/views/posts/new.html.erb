@@ -31,6 +31,10 @@
     
     <%= label_tag :restaurant_id %>
     <%= collection_select :restaurant, :restaurant_id, Restaurant.all, :id, :name %>
+ 
+<!--  -->
+
+
 
 
 
@@ -38,16 +42,15 @@
    
     </div>
 
-    <script>
-    <datalist id="names">
-      <option ng-repeat="restaurant in restaurants">{{restaurant.name}}</option>
-    </datalist>
-
-    Filter: <input ng-model="nameFilter" list="names">
-    </script>
+ 
 
 
 
   
   <input type="submit" value="Create Post">
 <% end %>
+
+
+
+
+

@@ -1,4 +1,6 @@
 <h3 align="center">Profile</h3>
+<img src=<%= @user.image%>><br>
+
 <h1 align="center"><%= @user.first_name%></h1>
 
 <div class="row" align="center">
@@ -20,6 +22,21 @@
   
 
 <h2>FORKS</h2>
+
+<% @user.boards.each do |board| %>
+
+  <div class ="col-lrg-7 col-lrg-7">
+
+
+    <div class="well">
+
+
+   <a href="/boards/<%=board.id%>"><%= board.name %></a><br>
+   
+       
+  </div>
+</div>  
+<%end%>
 
 <a href="/users/<%=@user.id%>/forks
 "><img src="http://www.rootscsa.org/wp-content/uploads/2014/06/Restaurant-Icon.png" width="200" height="200"></a></p>
