@@ -46,6 +46,7 @@ class RestaurantsController < ApplicationController
   end
 
    def search
+
   search_term = params[:search]
   @restaurants = Restaurant.where("location LIKE ?", "%#{search_term}%")
    render :index
