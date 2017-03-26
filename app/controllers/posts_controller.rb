@@ -34,11 +34,10 @@ end
       food: params[:food],
       price: params[:price],
       image: response["data"]["img_url"],
-      # if restaurant_id =! null
-      # restaurant_id: params[:restaurant_id]
       restaurant_id: params[:restaurant]["restaurant_id"],
-      # else redirect_to "restaurants/new"
-      # end  
+      # if restaurant_id == null
+      # render "restaurants/new"
+      # end 
       user_id: current_user.id
       )
 

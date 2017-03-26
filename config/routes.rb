@@ -44,6 +44,7 @@ end
   # get "/restaurants/:id" => "restaurants#show"
 
   get "/forks" => "forks#index"
+  get "forks/new" => "forks#new"
   post "/forks" => "forks#create"
   get "/forks/:id" => "forks#show"
   get "/users/:id/forks" => "forks#index"

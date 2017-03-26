@@ -1,5 +1,7 @@
+
 <%= form_tag "/boards", method: :post do %>
     <div>
+    <%= hidden_field_tag :post_id, params[:post_id] %>
      Board Name: <input type="text" name="name">
     </div>
     
@@ -12,4 +14,6 @@
 
   
   <input type="submit" value="Create Board">
+
 <% end %>
+

@@ -1,5 +1,16 @@
 <%= form_tag "/forks", method: :post do %>
+
+    <%= hidden_field_tag :post_id, params[:post_id] %>
     
+
+    <%= label_tag :board_id %>
+    
+    <%= collection_select :board, :board_id, current_user.boards, :id, :name%>
+   
+
+    <%= link_to "Create Board", "/boards/new?post_id=#{params[:post_id]}", class: "btn btn-success" %><br>
+
+
    
     
     
@@ -10,5 +21,5 @@
 
 
   
-  <input type="submit" value="Create Board">
+  <input type="submit" value="Create Fork">
 <% end %>

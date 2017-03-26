@@ -3,35 +3,33 @@ def index
  
     @user = User.find(params[:id])
     @forks = @user.forks
-
   
   
   
 end
 
+def new
+
+
+  render "forks/new"
+
+
+
+end
+
+
 def create
 
-  board_id = params[:board_id]
+
+  board_id = params[:board][:board_id]
 
   post_id = params[:post_id]
   fork = Fork.create(
   user_id: current_user.id,
   post_id: post_id,
   board_id: board_id)
-
-
-    
-
+  redirect_to "users"
 end
 
-# def show
-#     fork_id = params[:id]
-#     @fork = Fork.find_by(id: fork_id)
-   
-  
-#     user_id = params[:id]
-#     @user = User.find_by(id: user_id)
-#     @user = @fork.user
-# end
 
 end
