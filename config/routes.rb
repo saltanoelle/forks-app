@@ -60,6 +60,8 @@ end
   get "/boards/new" => "boards#new"
   get "/boards/:id" => "boards#show"
 
+  post "/comments" => "comments#create"
+
 
 
 

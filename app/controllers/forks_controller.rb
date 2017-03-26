@@ -28,7 +28,8 @@ def create
   user_id: current_user.id,
   post_id: post_id,
   board_id: board_id)
-  redirect_to "users"
+  redirect_to "/posts"
+
 end
 
 

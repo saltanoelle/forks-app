@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def create
     response = Unirest.post("http://uploads.im/api?upload", parameters: {file: params[:image]}).body
+    
 
     user = User.new(
       first_name: params[:first_name],

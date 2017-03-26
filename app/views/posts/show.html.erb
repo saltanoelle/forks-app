@@ -76,7 +76,10 @@
         <p>Restaurant:<a href="/restaurants/<%=@restaurant.id%>"> <%= @post.restaurant.name %></a></p>
       <p><%= number_to_currency(@post.price) %></p>
          <img src=<%= @post.image%>><br>
-          <%= submit_tag "Fork it" %>
+     <%= link_to "Fork", "/forks/new?post_id=#{@post.id}", class: "btn btn-info" %>
+
+
+
          </div>
       </div> 
     </div> 
@@ -85,6 +88,41 @@
     <%= link_to "Edit", "/posts/#{@post.id}/edit", class: "btn btn-success" %>
     <%= link_to "Delete", "/posts/#{@post.id}", {method: :delete, class: "btn btn-danger" }%>
   <% end %>     
+<br>
+<br>
+
+  <%= form_tag "/comments", method: :post do %>
+    <div>
+    <%= hidden_field_tag :post_id, @post.id %>
+    </div>
+   <div>
+    <h3>Comment:</h3>
+     <textarea type="text" rows="4" cols="50" name="body">
+Enter text here...</textarea>
+    </div>
+
+
+<% @post.comments.each do |comment| %>
+<%= comment.user.first_name %>:
+<%= comment.body %><br>
+<%end%>
+
+
+
+    
+    
+ 
+
+  
+
+
+  
+  <input type="submit" value="Submit">
+
+<% end %>
+
+
+
  
 
       

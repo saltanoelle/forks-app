@@ -1,8 +1,15 @@
 
 
 <h3 align="center">Profile</h3>
-<center>
-<img class="img-circle" src=<%= @user.image%>><br>
+
+
+<%= 
+   if @user.image?
+   else
+      img src= "https://cdn.datacamp.com/community/assets/placeholder_avatar-7f673b5d40e159404a56b5931250cc73.png" 
+   end
+%> 
+<img class="img-circle" src="<%= @user.image%>"><br>
 </center>
 
 <h1 align="center"><%= @user.first_name%>  <%= @user.last_name%></h1><br>
@@ -14,8 +21,7 @@
 
     <div class ="col-sm-4 col-sm-4">
       <div class ="float">
-    
-
+     
     <a href="/posts/<%=post.id%>"> <img src="<%= post.image%>"></a><br>
    
     </div>
@@ -54,5 +60,3 @@
 </div>
 </div>
 
-<a href="/users/<%=@user.id%>/forks
-"><img src="http://www.rootscsa.org/wp-content/uploads/2014/06/Restaurant-Icon.png" width="200" height="200"></a></p>
