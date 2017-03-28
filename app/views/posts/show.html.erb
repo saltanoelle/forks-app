@@ -103,7 +103,7 @@ Enter text here...</textarea>
 
 
 <% @post.comments.each do |comment| %>
-<%= comment.user.first_name %>:
+<b><%= comment.user.first_name %>:</b>
 <%= comment.body %><br>
 <%end%>
 

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def create
     response = Unirest.post("http://uploads.im/api?upload", parameters: {file: params[:image]}).body
-    
+
 
     user = User.new(
       first_name: params[:first_name],
@@ -18,10 +18,14 @@ class UsersController < ApplicationController
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
-      image: response["data"]["img_url"],
-
-
     )
+
+    if response.key?("data")
+      user.image = response["data"]["img_url"]
+    else
+      user.image = "/images/client3.png"
+    end
+
     if user.save
       session[:user_id] = user.id
       flash[:success] = 'Successfully created account!'
@@ -30,6 +34,7 @@ class UsersController < ApplicationController
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/signup'
     end
+
   end
 
   def show

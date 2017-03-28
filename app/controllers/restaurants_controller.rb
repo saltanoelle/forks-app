@@ -38,11 +38,13 @@ class RestaurantsController < ApplicationController
 
   end
   def show
+
     
     restaurant_id = params[:id]
-    @restaurant = Restaurant.find_by(id: restaurant_id)
+    @restaurant = Restaurant.friendly.find(restaurant_id)
     business_id = params[:id]
    @business = Yelp.client.search('San Francisco', { term: 'food' }).businesses
+
 
   end
 
@@ -50,6 +52,7 @@ class RestaurantsController < ApplicationController
 
   search_term = params[:search]
   @restaurants = Restaurant.where("location LIKE ?", "%#{search_term}%")
+  @restaurants = Restaurant.where("categories LIKE ?", "%#{search_term}%")
    render :index
 
 
