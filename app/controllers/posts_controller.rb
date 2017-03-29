@@ -30,6 +30,9 @@ end
   
   def create
     response = Unirest.post("http://uploads.im/api?upload", parameters: {file: params[:image]}).body
+    restaurant = Restaurant.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+    
+
     @post = Post.create(
       food: params[:food],
       price: params[:price],

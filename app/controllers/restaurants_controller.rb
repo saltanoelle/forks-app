@@ -50,9 +50,17 @@ class RestaurantsController < ApplicationController
 
    def search
 
-  search_term = params[:search]
-  @restaurants = Restaurant.where("location LIKE ?", "%#{search_term}%")
-  @restaurants = Restaurant.where("categories LIKE ?", "%#{search_term}%")
+  city = params[:city]
+  category = params[:category]
+
+  @restaurants = Restaurant.where("location LIKE ? AND categories LIKE ?", "%#{city}%", "%#{category}%")
+  puts "*************************"
+  puts "*************************"
+  puts "*************************"
+  puts @restaurants.pluck(:categories)
+  puts "*************************"
+  puts "*************************"
+  puts "*************************"
    render :index
 
 

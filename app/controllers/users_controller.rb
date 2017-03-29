@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if response.key?("data")
       user.image = response["data"]["img_url"]
     else
-      user.image = "/images/client3.png"
+      user.image = "https://www.salamcinama.ir/public/images/usrUploader/user/userpic.png"
     end
 
     if user.save

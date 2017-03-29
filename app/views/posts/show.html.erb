@@ -85,8 +85,35 @@
     </div> 
 
   <% if current_user.id == @post.user_id%> 
+
+
     <%= link_to "Edit", "/posts/#{@post.id}/edit", class: "btn btn-success" %>
     <%= link_to "Delete", "/posts/#{@post.id}", {method: :delete, class: "btn btn-danger" }%>
+    <html>
+<body>
+
+<p>Click the button to demonstrate line-breaks in a confirm box.</p>
+
+<button onclick="myFunction()">Delete</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var txt;
+    var r = confirm();
+    if (r == true) {
+        txt = "You pressed OK!";
+    } else {
+        txt = "You pressed Cancel!";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+</body>
+</html>
+
   <% end %>     
 <br>
 <br>
