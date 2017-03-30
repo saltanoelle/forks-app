@@ -29,7 +29,14 @@ overflow:hidden;}
                color:rgba(255,255,255,.85);
                font-size:96px;}
 
-
+.box {
+    position:relative;
+}
+.bet_time {
+    position:absolute;
+    bottom:0;
+    right:0;
+}
 
 
 
