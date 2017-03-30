@@ -69,16 +69,13 @@
 <h3 align="center">Profile</h3>
 <center>
 
-<%= 
-   if @user.image?
-   else
-      img src= "https://cdn.datacamp.com/community/assets/placeholder_avatar-7f673b5d40e159404a56b5931250cc73.png" 
-   end
-%> 
+
 <img class="img-circle" src="<%= @user.image%>"><br>
 </center>
 
 <h1 align="center"><%= @user.first_name%>  <%= @user.last_name%></h1><br>
+
+
 
 
 <div class="row">
@@ -87,7 +84,8 @@
 
     <div class ="col-sm-4 col-sm-4">
       <div class ="float">
-     
+
+
     <a href="/posts/<%=post.id%>"> <img src="<%= post.image%>"></a><br>
    
     </div>
@@ -100,7 +98,7 @@
 <div class="align: center;" style="width:1300px;height:3px;border-top:5px dotted #00E5FF;border-bottom:2px dotted #00E5FF;font-size:0;">-</div> 
   
 <center>
-<h2>FORKS</h2>
+<h2 style="font-family:Caflisch Script Pro, cursive, sans;">forks</h2>
 <div class="row">
 <div class="container">
 

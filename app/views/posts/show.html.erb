@@ -76,49 +76,13 @@
         <p>Restaurant:<a href="/restaurants/<%=@restaurant.id%>"> <%= @post.restaurant.name %></a></p>
       <p><%= number_to_currency(@post.price) %></p>
          <img src=<%= @post.image%>><br>
+        <p><%= @post.created_at.strftime("%B %d, %Y") %>
+
+         <br>
      <%= link_to "Fork", "/forks/new?post_id=#{@post.id}", class: "btn btn-info" %>
 
 
-
-         </div>
-      </div> 
-    </div> 
-
-  <% if current_user.id == @post.user_id%> 
-
-
-    <%= link_to "Edit", "/posts/#{@post.id}/edit", class: "btn btn-success" %>
-    <%= link_to "Delete", "/posts/#{@post.id}", {method: :delete, class: "btn btn-danger" }%>
-    <html>
-<body>
-
-<p>Click the button to demonstrate line-breaks in a confirm box.</p>
-
-<button onclick="myFunction()">Delete</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-    var txt;
-    var r = confirm();
-    if (r == true) {
-        txt = "You pressed OK!";
-    } else {
-        txt = "You pressed Cancel!";
-    }
-    document.getElementById("demo").innerHTML = txt;
-}
-</script>
-
-</body>
-</html>
-
-  <% end %>     
-<br>
-<br>
-
-  <%= form_tag "/comments", method: :post do %>
+      <%= form_tag "/comments", method: :post do %>
     <div>
     <%= hidden_field_tag :post_id, @post.id %>
     </div>
@@ -150,14 +114,17 @@ Enter text here...</textarea>
 
 
 
- 
 
-      
-    
+         </div>
+      </div> 
+    </div> 
 
-  
-    
-
+  <% if current_user.id == @post.user_id%> 
 
 
-  
+    <%= link_to "Edit", "/posts/#{@post.id}/edit", class: "btn btn-success" %>
+    <%= link_to 'Delete',  "/posts/#{@post.id}", method: :delete, class: "btn btn-danger", remote: true, data: { confirm: 'Delete this post?' } %>
+  <% end %>     
+<br>
+<br>
+

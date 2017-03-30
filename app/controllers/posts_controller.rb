@@ -13,6 +13,8 @@ end
   def index
     
     @posts = Post.all
+    @posts = Post.order("created_at DESC")
+
  
    
   end
@@ -30,7 +32,6 @@ end
   
   def create
     response = Unirest.post("http://uploads.im/api?upload", parameters: {file: params[:image]}).body
-    restaurant = Restaurant.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
     
 
     @post = Post.create(
@@ -38,9 +39,6 @@ end
       price: params[:price],
       image: response["data"]["img_url"],
       restaurant_id: params[:restaurant]["restaurant_id"],
-      # if restaurant_id == null
-      # render "restaurants/new"
-      # end 
       user_id: current_user.id
       )
 

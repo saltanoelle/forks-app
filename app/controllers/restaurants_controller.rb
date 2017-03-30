@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
    @restaurants = Restaurant.all
 
 
-  #  @businesses = Yelp.client.search('New York', { term: 'food' }).businesses
+  #  @businesses = Yelp.client.search('Los Angeles', { term: 'In-N-Out Burger' },{limit: '20'}).businesses
   #  @businesses.each do |business|
   #   @restaurant = Restaurant.create(
   #    name: business.name,
@@ -52,15 +52,9 @@ class RestaurantsController < ApplicationController
 
   city = params[:city]
   category = params[:category]
+  name = params[:name]
 
-  @restaurants = Restaurant.where("location LIKE ? AND categories LIKE ?", "%#{city}%", "%#{category}%")
-  puts "*************************"
-  puts "*************************"
-  puts "*************************"
-  puts @restaurants.pluck(:categories)
-  puts "*************************"
-  puts "*************************"
-  puts "*************************"
+  @restaurants = Restaurant.where("location LIKE ? AND categories LIKE ? AND name LIKE ?" , "%#{city}%", "%#{category}%", "%#{name}%")
    render :index
 
 
