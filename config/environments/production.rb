@@ -74,7 +74,13 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+<<<<<<< HEAD
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+=======
+  
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+
+>>>>>>> 3560323fb109758b06a10c42a2a0b6184e940efc
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
