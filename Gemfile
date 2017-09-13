@@ -24,6 +24,11 @@ gem 'unirest'
 gem 'dotenv-rails'
 gem 'compass-rails'
 gem 'friendly_id'
+gem 'rake', '< 11.0'
+gem 'aws-sdk', '~>1.59.1' 
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -43,12 +48,30 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem "rspec-rails", "~> 3.1.0"
+
+  gem "factory_girl_rails", "~> 4.4.1"
 
 end
+group :test do
 
+gem "faker", "~> 1.4.3"
+
+gem "capybara", "~> 2.4.3"
+
+ gem "database_cleaner", "~> 1.3.0"
+
+ gem "launchy", "~> 2.4.2"
+
+gem "selenium-webdriver", "~> 2.43.0"
+
+end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

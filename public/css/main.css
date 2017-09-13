@@ -6,9 +6,9 @@
 **************************/
 
 body {
-  background: #03A9F4;
+  background: #000000;
   font-family: 'Open Sans', sans-serif;
-  color:#4e4e4e;
+  color:#f5f5f5;
   line-height: 22px;
 }
 
@@ -135,7 +135,7 @@ body > section {
 }
 
 .transparent-bg {
-  background-color: transparent !important;
+  background-color: #f5f5f5;
   margin-bottom: 0;
 }
 
@@ -180,11 +180,13 @@ body > section {
 
 .navbar>.container .navbar-brand{
   margin-left: 0;
+  color: #000000;
 }
 
 .top-bar {
   padding: 10px 0;
-  background: ##039BE5;
+  background: #000000;
+  color: #000000;
   border-bottom: 1px solid #03A9F4;
   line-height: 28px;
 }
@@ -199,6 +201,7 @@ body > section {
 
 .social{
   text-align: right;
+  background-color: black;
 }
 
 .social-share{
@@ -214,8 +217,8 @@ ul.social-share li {
 
 ul.social-share li a {
   display: inline-block;
-  color: #fff;
-  background: #404040;
+  color: black;
+  background: black;
   width: 25px;
   height: 25px;
   line-height: 25px;
@@ -265,7 +268,7 @@ input.search-form:hover {
 .navbar {
   border-radius: 0;
   margin-bottom: 0;
-  background: #03A9F4;
+  background: black;
   padding: 15px 0;
   padding-bottom: 0;
 }
@@ -276,15 +279,14 @@ input.search-form:hover {
 
 .navbar-nav>li{
   margin-left: 35px;
-  padding-bottom: 28px;
+  padding-bottom: 30px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
   padding: 5px 12px;
   margin: 0;
-  border-radius: 3px;
-  color: #03A9F4;
-  background-color:#03A9F4;" 
+  border: none;
+  background-color: #000000;
   line-height: 24px;
   display: inline-block;
 }
@@ -366,11 +368,13 @@ input.search-form:hover {
 
 #main-slider {
   position: relative;
+   margin: 100px;
+  padding: 100px;
 }
 
 .no-margin {
-  margin: 0;
-  padding: 0;
+  margin: 100px;
+  padding: 100px;
 }
 
 #main-slider .carousel .carousel-content {
@@ -433,10 +437,10 @@ input.search-form:hover {
 
 #main-slider .prev,
 #main-slider .next {
-  position: absolute;
+  position: absolute; 
   top: 50%;
   background-color: #48b4f3;
-  color:#48b4f3;
+  color:white;
   display: inline-block;
   margin-top: -25px;
   height: 40px;
@@ -451,6 +455,7 @@ input.search-form:hover {
 #main-slider .prev:hover,
 #main-slider .next:hover {
   background-color: #03A9F4;
+  color: wh
 }
 
 #main-slider .prev {
