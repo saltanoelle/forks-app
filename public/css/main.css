@@ -368,8 +368,8 @@ input.search-form:hover {
 
 #main-slider {
   position: relative;
-   margin: 100px;
-  padding: 100px;
+   margin: 100%;
+  padding: 100%;
 }
 
 .no-margin {
