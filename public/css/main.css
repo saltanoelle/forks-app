@@ -292,8 +292,8 @@ input.search-form:hover {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover{
-	background-color: #03A9F4;
-  color: #03A9F4;
+	background-color: black;
+  color: black;
 }
 
 .navbar-inverse {
@@ -455,7 +455,7 @@ input.search-form:hover {
 #main-slider .prev:hover,
 #main-slider .next:hover {
   background-color: #03A9F4;
-  color: wh
+  color: white
 }
 
 #main-slider .prev {
