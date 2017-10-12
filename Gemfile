@@ -27,7 +27,7 @@ gem 'rake', '< 11.0'
 gem 'aws-sdk', '~>3.0.1' 
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog'
+gem 'fog-aws'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
