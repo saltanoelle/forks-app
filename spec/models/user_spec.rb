@@ -6,7 +6,7 @@ require 'rails_helper'
 
  it "is valid with a firstname, lastname and email" do
 
- contact = Contact.new(
+ user = User.new(
 
  firstname: 'Aaron',
 
@@ -14,7 +14,7 @@ require 'rails_helper'
 
  email: 'tester@example.com')
 
- expect(contact).to be_valid
+ expect(user).to be_valid
 
  end
 

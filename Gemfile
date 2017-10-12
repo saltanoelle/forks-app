@@ -24,11 +24,10 @@ gem 'dotenv-rails'
 gem 'compass-rails'
 gem 'friendly_id'
 gem 'rake', '< 11.0'
-gem 'aws-sdk', '~>1.59.1' 
+gem 'aws-sdk', '~>3.0.1' 
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
