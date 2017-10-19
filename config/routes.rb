@@ -62,6 +62,8 @@ end
 
   post "/comments" => "comments#create"
 
+  get "/about_app" => "about_app#index"
+
 
 
 
