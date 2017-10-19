@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
    @restaurants = Restaurant.all
 
 
-   @businesses = Yelp.client.search('Seattle', { term: 'Dessert' },{limit: '20'}).businesses
+   @businesses = Yelp.client.search('San Francisco', { term: 'Food' },{limit: '40'}).businesses
    @businesses.each do |business|
     @restaurant = Restaurant.create(
      name: business.name,
