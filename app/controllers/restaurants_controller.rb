@@ -3,15 +3,15 @@ class RestaurantsController < ApplicationController
    @restaurants = Restaurant.all
 
 
-  #  @businesses = Yelp.client.search('Seattle', { term: 'Dessert' },{limit: '20'}).businesses
-  #  @businesses.each do |business|
-  #   @restaurant = Restaurant.create(
-  #    name: business.name,
-  #    image_url: business.image_url,
-  #    rating_img_url: business.rating_img_url,
-  #    location: business.location.display_address,
-  #    categories: business.categories)
-  # end
+   @businesses = Yelp.client.search('Seattle', { term: 'Dessert' },{limit: '20'}).businesses
+   @businesses.each do |business|
+    @restaurant = Restaurant.create(
+     name: business.name,
+     image_url: business.image_url,
+     rating_img_url: business.rating_img_url,
+     location: business.location.display_address,
+     categories: business.categories)
+  end
 
   
 
