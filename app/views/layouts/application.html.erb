@@ -35,7 +35,9 @@
                         <li class="active" ><a href="/" >Home</a></li>
                         <li><a href="/about_app">About</a></li>
                         <li><a href="/posts">Explore</a></li>
+                        <%if !current_user %>
                         <li><a href="/signup">Sign Up</a></li>
+                        <%end%>
                         <li><a href="/restaurants">Restaurants</a></li>
                         <%if current_user %>
                         <li><a href="/users/<%=current_user.id%>">Profile</a></li>
