@@ -1,13 +1,13 @@
 class PostsController < ApplicationController
-# before_filter :require_permission, only: [:edit, :delete]
+before_filter :require_permission, only: [:edit, :delete]
 
 
-# def require_permission
-#   if current_user != Post.find(params[:id]).user
-#     redirect_to "/posts"
-#     #Or do something else here
-#   end
-# end
+def require_permission
+  if current_user != Post.find(params[:id]).user
+    redirect_to "/posts"
+    #Or do something else here
+  end
+end
 
  
   def index

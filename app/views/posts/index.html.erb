@@ -14,7 +14,7 @@
 
 <center>
 
- <% if current_user %>
+
  <h1 style="color:#03A9F4; font-family:Jazz LET, fantasy">Welcome <%=current_user.first_name%></h1>
  <% end %>
 <% @posts.each do |post|%>
@@ -45,29 +45,13 @@
 
 
 <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCNE9kBPbm6i70CzTN8vRIDVIeLCqkjYh8",
-    authDomain: "forks-bcde6.firebaseapp.com",
-    databaseURL: "https://forks-bcde6.firebaseio.com",
-    projectId: "forks-bcde6",
-    storageBucket: "forks-bcde6.appspot.com",
-    messagingSenderId: "920265633273"
-  };
-  firebase.initializeApp(config);
-</script>
+
 <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-messaging.js"></script>
 
-<script>
-  var config = {
-    // ...
-  };
-  firebase.initializeApp(config);
-</script>
+
 
  </div>
     </div>
