@@ -14,7 +14,7 @@
 
 <center>
 
-
+ <% if current_user %>
  <h1 style="color:#03A9F4; font-family:Jazz LET, fantasy">Welcome <%=current_user.first_name%></h1>
  <% end %>
 <% @posts.each do |post|%>
